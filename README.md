@@ -24,11 +24,7 @@ python main.py comicname [-v volumenum] [-b browsername] [-c]
 
 **comicname**, the subpath of url followed by ```/HTML/``` to direct to the comic you interested.
 
-For example, the case of [comic.sfacg.com](http://comic.sfacg.com) 
-
-```http://comic.sfacg.com/HTML/Naruto/``` 
-
-the comicname to input is the *Naruto*
+For example, in the case of [comic.sfacg.com](http://comic.sfacg.com), if the url of the comic you interested is ```http://comic.sfacg.com/HTML/Naruto/```, then  the comicname would be the *Naruto*.
 
 #### Options
 
@@ -37,5 +33,3 @@ the comicname to input is the *Naruto*
 
 
 * **-c**, the flag indicating to download the current volume only. If this flag is not set, the program will download the comic to the latest volume in the comic website.
-
-  ​
