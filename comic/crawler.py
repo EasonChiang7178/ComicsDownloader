@@ -18,26 +18,26 @@ class Crawler(object):
 
   def run(self):
     """ Start to the crawling """
-    print("INFO: Start crawling comic, " + self.comicSource.getComicName())
+    print("INFO: start crawling comic, " + self.comicSource.getComicName())
 
     if not self.onlyGetCurVol:
       pageNotFoundCounter = 0
       while self.comicSource.isCrawlAtEnd() == False:
-        print("INFO: Crawling Volume " + str(self.volumeNum) + "...")
+        print("INFO: crawling volume " + str(self.volumeNum) + "...")
 
         if self.comicSource.crawler(self.volumeNum, self.downloadDir) == False:
           pageNotFoundCounter += 1
         else:
           pageNotFoundCounter = 0
 
-        if pageNotFoundCounter >= 500:
-          print("ERROR: Comic " + self.comicSource.getComicName() + " not found, exit")
+        if pageNotFoundCounter >= 400:
+          print("ERROR: comic " + self.comicSource.getComicName() + " not found, exit")
           break
 
         self.volumeNum += 1
     else:
-      print("INFO: Crawling Volume " + str(self.volumeNum) + "...")
+      print("INFO: crawling volume " + str(self.volumeNum) + "...")
       self.comicSource.crawl(self.volumeNum)
 
-    print("INFO: Retrieve comic end!")
+    print("INFO: retrieve comic" + self.comicSource.getComicName() + " end!")
     self.comicSource.quit()
