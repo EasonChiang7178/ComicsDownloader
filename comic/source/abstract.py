@@ -31,7 +31,6 @@ class AbstractComicSource(object):
     else:
       browser = webdriver.PhantomJS(executable_path='/usr/bin/phantomjs')
 
-    browser.implicitly_wait(.5)
     return browser
 
   def quit(self):
