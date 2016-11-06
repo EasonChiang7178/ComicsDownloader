@@ -25,16 +25,19 @@ for op, value in opts:
   elif op == "-b":      # the name of the browser to use
     browser = valuse
   elif op == "-c":      # download only current volume
-   onlyGetCurVol = True
+    onlyGetCurVol = True
   else:
     sys.exit()
 
 # Check whether user input which comic to download
-if len(sys.argv) > 1 and sys.argv[1] and '-' not in sys.argv[1]:
+if len(args) == 0:
   comicName = sys.argv[1]
+else:
+  print("ERROR: input arguments format error!")
+  sys.exit()
 
 if comicName == "":
-  print("ERROR: Please enter the comic name")
+  print("ERROR: please enter the comic name")
   sys.exit()
 
 
